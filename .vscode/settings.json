@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/44e1dac0-0651-4835-8781-ee7b6e6f238f/resourceGroups/mfdns-spoke/providers/Microsoft.Web/sites/mfdns-site",
+    "appService.deploySubpath": ""
+}
