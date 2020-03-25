@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 Get Data from Storage TableName:#{tableName}
+
+  if error != ""
+    p Error: #{error}
+
+  div
+    table
+        thead
+        tr 
+            th Partitioned Key
+            th Row Key
+            th Content
+        tbody
+        each item, i in tableData
+            tr
+            td= item.PartitionKey
+            td= item.RowKey
+            td= item.Content
