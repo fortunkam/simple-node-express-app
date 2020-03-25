@@ -4,18 +4,18 @@ block content
   h1 Get Data from Storage TableName:#{tableName}
 
   if error != ""
-    p Error: #{error}
+    div(class='alert alert-primary') Error: #{error}
 
   div
-    table
+    table(class='table')
         thead
         tr 
-            th Partitioned Key
-            th Row Key
-            th Content
+            th(scope='col') Partitioned Key
+            th(scope='col') Row Key
+            th(scope='col') Content
         tbody
         each item, i in tableData
             tr
-            td= item.PartitionKey
+            td(scope='row')= item.PartitionKey
             td= item.RowKey
             td= item.Content
