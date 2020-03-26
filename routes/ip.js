@@ -7,10 +7,15 @@ var request = require('request');
 router.get('/', function(req, res, next) {
 
     request('http://httpbin.org/ip', {json: true}, (err,resReq,body) => {
-        if (err) { 
-            return console.log(err); 
+    var ip = '';
+    var error=''    
+    if (err) { 
+            error = err;
         }
-        res.render('ip', { ipAddress:body.origin });
+        else{
+            ip = body.origin;
+        }
+        res.render('ip', { ipAddress:ip, error: error });
     });
   
 });
